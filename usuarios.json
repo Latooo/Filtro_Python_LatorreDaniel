@@ -1,1 +1,9 @@
-{"usuarios":{"id": "", "nombre": "", "direccion": "", "telefono": ""}}
+{
+  "usuarios": {
+    "ti": "777777777",
+    "nombre": "Pedro",
+    "direccion": "Calle 35, Bucaramanga",
+    "telefono": "",
+    "categoria": "Leal"
+  }
+}
