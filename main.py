@@ -4,7 +4,7 @@ def cargar_datos():
     with open("usuarios.json", "r") as archivo:
         datos = json.load(archivo)
         return datos
-print(cargar_datos)
+
 
 def guardar_datos(datos):
     with open("usuarios.json", "w") as archivo:
