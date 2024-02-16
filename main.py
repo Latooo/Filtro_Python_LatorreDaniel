@@ -64,18 +64,21 @@ def eliminar_usuario():
 def asignar_categoria():
     with open("usuarios.json", "r") as archivo:
         datos = json.load(archivo)
+        if datos["usuarios"]["ti"]=="":
+            print("No hay un usuario registrado actualmente.")
+        else:
+            categoria = input("ingrese la nueva categoria del usuario (Nuevo, Regular o Leal): ")
 
-        categoria = input("ingrese la nueva categoria del usuario (Nuevo, Regular o Leal): ")
-
-    datos["usuarios"]["categoria"] = categoria
+            datos["usuarios"]["categoria"] = categoria
+            print("La categoria se guardo con exito.")
 
     guardar_datos(datos)
-    print("La categoria se guardo con exito.")
+   
 
 ##---------------------------------------------------------- Creacion de menus ------------------------------------------------------------------------------
 
 def menu_principal():
-    print("Menu principal.")
+    print("MENU PRINCIPAL")
     print("1. Administracion")
     print("2. Gestion de servicios")
     print("3. Reportes")
@@ -113,7 +116,23 @@ def menu_administracion_fidelizacion():
 
     ##----------------------------------------------------------------- Uso de menus---------------------------------------------------------------------
 def principal():
-    menu_administracion_gestion()
+    menu_principal()
+    while True:
+        opcion = input("Ingrese una opcion (1-5): ")
+
+        if opcion == "1":
+            menu_administracion_general()
+        elif opcion == "2":
+            pass
+        elif opcion == "3":
+            pass
+        elif opcion == "4":
+            pass
+        elif opcion == "5":
+            break
+        
+def iniciar_administracion():
+    menu_administracion_general()
     while True:
         opcion = input("Ingrese una opcion (1-5): ")
         
