@@ -1,5 +1,8 @@
 import json
 
+def cargar_datos():
+    with open("usuarios.json", "r") as archivo:
+        datos = json.load(archivo)
 
 def guardar_datos(datos):
     with open("usuarios.json", "w") as archivo:
@@ -115,27 +118,12 @@ def menu_administracion_fidelizacion():
 
 
     ##----------------------------------------------------------------- Uso de menus---------------------------------------------------------------------
-def principal():
-    menu_principal()
+
+def iniciar_gestion():
     while True:
+        menu_administracion_gestion()
         opcion = input("Ingrese una opcion (1-5): ")
 
-        if opcion == "1":
-            menu_administracion_general()
-        elif opcion == "2":
-            pass
-        elif opcion == "3":
-            pass
-        elif opcion == "4":
-            pass
-        elif opcion == "5":
-            break
-        
-def iniciar_administracion():
-    menu_administracion_general()
-    while True:
-        opcion = input("Ingrese una opcion (1-5): ")
-        
         if opcion == "1":
             crear_usuario()
         elif opcion == "2":
@@ -148,9 +136,5 @@ def iniciar_administracion():
             break
 
 
-
-        
-
-
-principal()
+iniciar_gestion()
 
